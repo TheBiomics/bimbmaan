@@ -3,8 +3,8 @@
   build-backend = "setuptools.build_meta"
 
 [project]
-  name = "Bimbmaan"
-  description = "Bimbmaan: A Shaktiman to process high quality images for research publication"
+  name = "bimbmaan"
+  description = "bimbmaan: A Shaktiman to process high quality images for research publication"
   version = "0.1"
   authors = [
     { name="Vishal Kumar Sahu", email="mail@vishalkumarsahu.in" },
@@ -28,6 +28,9 @@
 [project.scripts]
   bimbkar = "bimbmaan:bimbkar"
   bimbmaan = "bimbmaan:bimbkar"
+  bimbman = "bimbmaan:bimbkar"
+  bimbtile = "bimbmaan:bimbtile"
+  bimbconv = "bimbmaan:bimbconv"
 
 [project.urls]
   Homepage = "https://github.com/TheBiomics/bimbmaan"
