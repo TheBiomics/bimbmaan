@@ -15,6 +15,8 @@ BIMBMAAN is a powerful tool designed to assist researchers in dealing with image
 * Install BIMBMAAN using `pip install bimbmaan`.
 * Navigate to your images directory where your images are ready to process.
 * Use command `bimbkar` or `bimbman` for batch processing.
+* Customised examples:
+    - `bimbkar -d 72 600 1200 -e jpg tiff`
 
 ## Benefits
 * Saves time and effort by automating image processing tasks.

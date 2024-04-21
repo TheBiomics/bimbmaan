@@ -1,5 +1,5 @@
 from UtilityLib import ProjectManager
-import fitz as PyFPDF
+
 from PIL import Image
 
 class BimbManager(ProjectManager):
@@ -37,13 +37,17 @@ class BimbManager(ProjectManager):
 
     _write_file_path = _pdf_path
 
-    _pdf_pages = PyFPDF.open(_pdf_path)
+    if not self.require('fitz', "PyFPDF"):
+      print("Error: Please install `pip install fitz` and `pip install PyMuPDF` to continue.")
+      return
+
+    _pdf_pages = self.PyFPDF.open(_pdf_path)
 
     _allowed_extensions = Image.registered_extensions()
     
     for _pi, page in self.PB(enumerate(_pdf_pages)):
       _pix = page.get_pixmap()
-      _pix = PyFPDF.Pixmap(_pix, 0)
+      _pix = self.PyFPDF.Pixmap(_pix, 0)
 
       _im = Image.frombytes("RGB", [_pix.width, _pix.height], _pix.samples)
 
@@ -61,9 +65,12 @@ class BimbManager(ProjectManager):
           _img_path = self.change_ext(_write_file_path, f"S{_pi+1}.dpi{_dpi:.0f}.{_ext}")
           _im.save(_img_path, _type, quality=100, dpi=(_dpi, _dpi))
 
-  def magic(self):
+  def pdf_to_image(self):
     self.process_args()
     print("Starting image conversion...")
+
+    # Add logic based on extension
+
     if getattr(self, 'path_file'):
       self._pdf_to_img(getattr(self, 'path_file'))
     else:
@@ -71,3 +78,27 @@ class BimbManager(ProjectManager):
       for _pdf in _pdfs:
         self._pdf_to_img(_pdf)
     print("Image conversion completed...")
+
+  def _tile_to_pptx(self):
+    """Title images to powerpoint slides for quick viewing"""
+
+  def tiling(self):
+    ...
+
+  def _svg_to_meta(self):
+    """Convert SVG to metafile (wmf/emf)"""
+
+    if self.is_windows:
+      # Inkscape windows command
+      ...
+    
+    else:
+      # Inkscape linux command
+      ...
+
+  def converter(self):
+    """
+    1. Raster to Raster Conversion
+    2. Vector to Raster Conversion
+    """
+    ...
