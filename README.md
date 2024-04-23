@@ -1,6 +1,6 @@
 # **BIMBMAAN**: A Shaktiman to process high quality images for research publication
 
-BIMBMAAN is a powerful tool designed to assist researchers in dealing with image resizing and conversion challenges encountered during manuscript preparation for research publication. Its primary goal is to simplify the process of handling high-quality images, ensuring they meet the standards required for publication.
+BIMBMAAN is a powerful tool (Swiss Army Knife) designed to assist researchers in dealing with image resizing and conversion challenges encountered during manuscript preparation for research publication. Its primary goal is to simplify the process of handling high-quality images, ensuring they meet the standards required for publication.
 
 # Details and Descriptions
 
@@ -14,15 +14,26 @@ BIMBMAAN is a powerful tool designed to assist researchers in dealing with image
 ## How to Use
 * Install BIMBMAAN using `pip install bimbmaan`.
 * Navigate to your images directory where your images are ready to process.
-* Use command `bimbkar` or `bimbman` for batch processing.
-* Customised examples:
-    - `bimbkar -d 72 600 1200 -e jpg tiff`
+
+* PDF to Image Conversion:
+  - `bimbpdf`
+  - `bimbpdf -d 72 600 1200 -e jpg tiff`
+
+* Clip Whitespace around Images:
+  - `bimbclip`
+
+* Convert SVG to metafile:
+  - `bimbsvg`
+
+* Remove background from Images:
+  - `bimbrvg`
 
 ## Benefits
 * Saves time and effort by automating image processing tasks.
 * Ensures compliance with publication guidelines regarding image quality and resolution.
 * Reduces the risk of errors and inconsistencies in image conversion and dimensions of the images.
+* Batch processing
 
 # Feedback and Support
-We welcome any feedback or suggestions for improving BIMBMAAN. Please report issues through 
+We welcome any feedback or suggestions for improving BIMBMAAN. Please report issues through
 [GitHub issues](https://github.com/TheBiomics/bimbmaan/issues).
