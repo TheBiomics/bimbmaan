@@ -27,7 +27,7 @@ class BimbCMD(BimbBase):
   def pdf_to_image(self):
     self._process_pdf_to_img_args()
     self.log_info("PDF => Images...")
-    if not self.require_from('PIL', 'Image', 'PILImage'):
+    if not self.require('PIL.Image', 'PILImage'):
       print("Error: PIL module is not installed.")
       return
 
@@ -50,7 +50,7 @@ class BimbCMD(BimbBase):
     self._process_pdf_to_img_args()
     self.require('cv2', 'CV2')
     self.require('numpy', 'NP')
-    self.require_from('PIL', 'Image', 'PILImage')
+    self.require('PIL.Image', 'PILImage')
     _found_images = self.find_files(self.get_path(), ["jpg", "png", "jpeg"])
     for _image in _found_images:
       _out_image = self.change_ext(_image, 'clipped.png')

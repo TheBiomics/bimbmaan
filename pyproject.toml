@@ -5,7 +5,7 @@
 [project]
   name = "bimbmaan"
   description = "bimbmaan: A Shaktiman to process high quality images for research publication"
-  version = "0.2"
+  version = "0.3"
   authors = [
     { name="Vishal Kumar Sahu", email="mail@vishalkumarsahu.in" },
   ]
@@ -27,14 +27,17 @@
 
 [project.scripts]
   bimbpdf = "bimbmaan:bimbpdf"
-  bimbsvg = "bimbmaan:bimbsvg"
-
   b__pdf = "bimbmaan:bimbpdf"
+
+  bimbsvg = "bimbmaan:bimbsvg"
   b__svg = "bimbmaan:bimbsvg"
+
+  bimbclip = "bimbmaan:bimbclip"
+  b__clip = "bimbmaan:bimbclip"
 
   bimbtile = "bimbmaan:bimbtile"
   bimbconv = "bimbmaan:bimbconv"
-  bimbclip = "bimbmaan:bimbclip"
+
   bimbrbg = "bimbmaan:bimbrbg"
 
 [project.urls]

@@ -22,7 +22,7 @@ class BimbBase(ProjectManager):
 
     _has_fitz = self.require('fitz', "PyFPDF")
     if not _has_fitz:
-      print("Error: Required packages are not installed. Please install `pip install fitz` and `pip install PyMuPDF` to continue.")
+      print("Error: Required packages are not installed. Please install/reinstall using `pip install PyMuPDF --force-reinstall` and `pip install fitz` to continue.")
       return
 
     _pdf_pages = self.PyFPDF.open(_pdf_path)
